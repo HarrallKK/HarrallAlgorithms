@@ -16,9 +16,9 @@ General calls to the algorithm will look slightly different across the SAS and R
 *Cleaning the Heights*
 
 * macro: IterativeLoop
-       * variables: 
-              * InLib: the library the dataset for analysis is stored in
-              * OutLib: the library the output data will be stored in
+    * variables: 
+        * InLib: the library the dataset for analysis is stored in
+        * OutLib: the library the output data will be stored in
               * InPath: Path to the raw data on laptop
               * OutPath: Desired path to output dataset
               * InDS: The name of the input dataset
