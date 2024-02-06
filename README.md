@@ -13,29 +13,23 @@ General calls to the algorithm will look slightly different across the SAS and R
 
 ### SAS Program:
 
-/* Cleaning the Heights 
-        - The 'iterativeLoop' macro will first remove repeated heights
-            - After all repeated heights are removed, it will detect peaks in the height variable and 
-              iteratively remove peaks until the desired threshold for peaks is satisfied for until
-              the max number of iterations has been reached.
+*Cleaning the Heights*
         - macro: IterativeLoop
               - variables: 
-                          InLib: the library the dataset for analysis is stored in
-                          OutLib: the library the output data will be stored in
-                          InPath: Path to the raw data on laptop
-                          OutPath: Desired path to output dataset
-                          InDS: The name of the input dataset
-                          OutDS: Name of desired output dataset
-                          PIDVar: Name of identifying variable for participants
-                          HeightVar: Name of height variable in original dataset
-                          AgeVar: Name of age variable in original dataset
-                          SourceVar: Name of the source variable in original dataset. The algorithm will sort this variable using "proc sort" and remove
-                                        any duplicated measurements that occur at the same timepoint for a participant. The first observation after sorting
-                                        will be retained
-                          MaxIterations: The number of iterations to be completed as a maximum for computational efficiency
-                          MaxPeaks: The number of peaks that the data should contain as an upper bound (typically 0)
-                          OutFileExt: File extension for document that contains cleaning statistics across all iterations of the algorithm
-*/
+                          - InLib: the library the dataset for analysis is stored in
+                          - OutLib: the library the output data will be stored in
+                          - InPath: Path to the raw data on laptop
+                          - OutPath: Desired path to output dataset
+                          - InDS: The name of the input dataset
+                          - OutDS: Name of desired output dataset
+                          - PIDVar: Name of identifying variable for participants
+                          - HeightVar: Name of height variable in original dataset
+                          - AgeVar: Name of age variable in original dataset
+                          - SourceVar: Name of the source variable in original dataset. The algorithm will sort this variable using "proc sort" and remove any duplicated measurements that occur at the same timepoint for a participant. The first observation after sorting will be retained
+                          - MaxIterations: The number of iterations to be completed as a maximum for computational efficiency
+                          - MaxPeaks: The number of peaks that the data should contain as an upper bound (typically 0)
+                          - OutFileExt: File extension for document that contains cleaning statistics across all iterations of the algorithm
+
 %iterativeLoop( InLib         = In01,
                 OutLib        = Out01,
                 InPath        = indata,
