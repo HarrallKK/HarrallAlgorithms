@@ -86,8 +86,9 @@ General calls to the algorithm will look slightly different across the SAS and R
 
 ### R Program
 
-/* create variables in R session for each of the following required arguments in 
-        the iterative loop */
+```
+# create variables in R session for each of the following required arguments in 
+        the iterative loop 
 outputHt    <- "path to folder for height cleaning data"
 outputWt    <- "path to folder for weight cleaning data"
 outDSNameHt <- "Name of Excel File for height cleaning data"
@@ -98,19 +99,19 @@ weight      <- "Name of weight variable in dataset"
 ID          <- "Name of patient identifier in dataset"
 source      <- "Name of source variable in dataset"
 
-/* this step will clean the heights */
+# this step will clean the heights 
 HtCleanedData <- Height_IterativeLoop(data=data, maxpeaks=0, maxiterations=100,
                                       userAgeVar = age, userHeightVar = height, 
                                       userIDVar = ID, userSourceVar = source,
                                       summaryPath = outputHt, outputName = outDSNameHt)
 
-/* this step will clean the weights */
+# this step will clean the weights 
 WtCleanedData <- Weight_IterativeLoop(data=CleanHts, maxpeaks=0, maxiterations=100,
                                       userAgeVar = age, userWeightVar = weight, 
                                       userIDVar = ID, userSourceVar = source,
                                       summaryPath = outputWt, outputName = outDSNameWt)
 
-
+```
 
 
 
