@@ -31,43 +31,39 @@ General calls to the algorithm will look slightly different across the SAS and R
                           * MaxPeaks: The number of peaks that the data should contain as an upper bound (typically 0)
                           * OutFileExt: File extension for document that contains cleaning statistics across all iterations of the algorithm
 
-%iterativeLoop( InLib         = In01,
-                OutLib        = Out01,
-                InPath        = indata,
-                OutPath       = outdata,
-                InDS          = data_need_to_clean,
-                OutDS         = cleaned_heights,
-                PIDVar        = ID_Variable,
-                HeightVar     = lg_cm,
-                AgeVar        = ageyears,
-                SourceVar     = source,
-                MaxIterations = 100,
-                MaxPeaks      = 0,
-                OutFileExt    = xlsx);
+* %iterativeLoop( InLib         = In01,
+                 OutLib        = Out01,
+                 InPath        = indata,
+                 OutPath       = outdata,
+                 InDS          = data_need_to_clean,
+                 OutDS         = cleaned_heights,
+                 PIDVar        = ID_Variable,
+                 HeightVar     = lg_cm,
+                 AgeVar        = ageyears,
+                 SourceVar     = source,
+                 MaxIterations = 100,
+                 MaxPeaks      = 0,
+                 OutFileExt    = xlsx);
 
 
- /* Step Two: Clean the Weights 
-        - This macro will first remove all repeated weights
-            - After all repeated weights are removed, the anomaly algorithm will then run using the provided
-              weight threshold to detect true peaks in the weight variable
-        - macro: WeightLoop
-              - variables: 
-                          InLib: the library the dataset for analysis is stored in
-                          OutLib: the library the output data will be stored in
-                          InPath: Path to the raw data on laptop
-                          OutPath: Desired path to output dataset
-                          InDS: The name of the input dataset
-                          OutDS: Name of desired output dataset
-                          PIDVar: Name of identifying variable for participants
-                          WeightVar: Name of weight variable in original dataset
-                          AgeVar: Name of age variable in original dataset
-                          SourceVar: Name of the source variable in original dataset. The algorithm will sort this variable using "proc sort" and remove
-                                        any duplicated measurements that occur at the same timepoint for a participant. The first observation after sorting
-                                        will be retained
-                          MaxIterations: The number of iterations to be completed as a maximum for computational efficiency
-                          MaxPeaks: The number of peaks that the data should contain as an upper bound (typically 0)
-                          OutFileExt: File extension for document that contains cleaning statistics across all iterations of the algorithm
-*/
+
+*Cleaning the Weights*
+
+        * macro: WeightLoop
+              * variables: 
+                          * InLib: the library the dataset for analysis is stored in
+                          * OutLib: the library the output data will be stored in
+                          * InPath: Path to the raw data on laptop
+                          * OutPath: Desired path to output dataset
+                          * InDS: The name of the input dataset
+                          * OutDS: Name of desired output dataset
+                          * PIDVar: Name of identifying variable for participants
+                          * WeightVar: Name of weight variable in original dataset
+                          * AgeVar: Name of age variable in original dataset
+                          * SourceVar: Name of the source variable in original dataset. The algorithm will sort this variable using "proc sort" and remove any duplicated measurements that occur at the same timepoint for a participant. The first observation after sorting will be retained
+                          * MaxIterations: The number of iterations to be completed as a maximum for computational efficiency
+                          * MaxPeaks: The number of peaks that the data should contain as an upper bound (typically 0)
+                          * OutFileExt: File extension for document that contains cleaning statistics across all iterations of the algorithm
 %WeightLoop( InLib            = Out01,
                 OutLib        = CleanedData,
                 InPath        = indata,
