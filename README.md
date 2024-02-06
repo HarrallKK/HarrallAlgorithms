@@ -86,6 +86,8 @@ General calls to the algorithm will look slightly different across the SAS and R
 
 ### R Program
 
+The below code demonstrates a call to the Harrall Algorithm for height and weight. For a more detailed demonstration of the execution of the code, please reference the R files in the ExamplePrograms folder. 
+
 ```
 # create variables in R session for each of the following required arguments in 
         the iterative loop 
