@@ -2,7 +2,7 @@
 
 **A better performing algorithm for identification of implausible growth data from longitudinal pediatric medical records**
 
-*Kylie K. Harrall, Sarah M. Bird, Keith E. Muller, Laruen A. Vanderlinden, Maya E. Payton, Anna Bellatorre, Dana Dabelea, and Deborah H. Glueck*
+*Kylie K. Harrall, Sarah M. Bird, Keith E. Muller, Lauren A. Vanderlinden, Maya E. Payton, Anna Bellatorre, Dana Dabelea, and Deborah H. Glueck*
 
 This anthropometric cleaning algorithm is available in both SAS and R. Both versions are accessible in the "AlgorithmProgs.zip" folder. For a detailed explanation of use cases for this algorithm, please see the example programs folder in the "AlgorithmProgs.zip" folder.
 
